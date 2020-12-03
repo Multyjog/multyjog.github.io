@@ -1,243 +1,272 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <title>Catalog</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="https://kit.fontawesome.com/1f01a88778.js" crossorigin="anonymous"></script>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/1f01a88778.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-         body {
+        body {
             background-color: #f6d62b;
             font-family: sans-serif;
             font-weight: bold;
             font-size: larger;
-        }
-        .logo {
+            }
+            .logo {
             background-color: black;
             font-weight: bolder;
             font-size: larger;
         }
+
         a {
             text-decoration: none;
             color: black;
         }
+
         a:hover {
             color: black;
         }
+
         h1 {
             color: white;
         }
+
         .mr-t5 {
             margin-top: 5%;
-        } 
-        h3 { 
-            border-bottom: 1rem double white; 
+        }
+
+        h3 {
+            border-bottom: 1rem double white;
             float: left;
             color: white;
             font-weight: bolder;
         }
+
         .clear {
             clear: both;
         }
-        .card {
-            background-color: black;
-            color: white;
-        }
-        h4 {
-            font-weight: bolder;
-        }
+
         .active {
             text-decoration: underline 3px black;
         }
+
         .active:hover {
             text-decoration: underline 3px black;
         }
+
         p {
             font-size: small;
             font-family: montserrat;
         }
+
         h2 {
             font-weight: bold;
         }
+
+        #content-container {
+            width: 80%;
+
+        }
+
+        .fl {
+            justify-content: space-between;
+            flex-wrap: wrap;
+            flex-grow: 1;
+
+        }
+
         .shade {
             box-shadow: 3px 3px 10px;
+            background-color: black;
+            color: white;
         }
+
         .btn-warning {
             background-color: #e48900;
             font-weight: bolder;
             color: white;
             font-size: large;
         }
-        .hg {
-            height: 50rem;
+
+        h4 {
+            font-weight: bolder;
         }
-        #main-container {
-            margin-left: 5%;
-            margin-right: 5%;
+
+        p {
+            font-size: small;
+            font-family: montserrat;
         }
-        /* @media (min-width: 1200px) {
-            .container, .container-lg, .container-md, .container-sm, .container-xl {
-                max-width: 1600px;
+        .cards {
+            display: flex;
+            flex-direction: column;
+            flex: 0 3 100%;
+        }
+
+        @media screen and (min-width: 500px) {
+            .cards {
+                flex: 0 1 45%;
             }
-        } */
-        .middleone {
-            margin-left: 5%;
-            margin-right: 5%;
+        }
+
+        @media screen and (min-width: 1000px) {
+            .cards {
+                flex: 0 1 28%;
+            }
         }
     </style>
-</head>
-<body>
-    <header class="mt-3">
-        <div class="navbar">
-            <div class="container-fluid justify-content-around">
-                <a href="home.html" class="navbar-brand d-flex align-items-center justify-content-between">
-                    <h1 class="logo p-3">SK</h1>
-                    <h2 class="ml-3">SuperKal</h2>
-                </a>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand d-flex align-items-center" href="home.html">
+                <h1 class="logo p-3">SK</h1>
+                <h2 class="ml-3">SuperKal</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <div class="row justify-content-between">
                     <a class="nav-link" href="home.html">MAIN</a>
                     <a class="nav-link active" href="catalog.html">CATALOG</a>
                     <a class="nav-link" href="contact.html">CONTACTS</a>
                     <a class="nav-link" href="testimonials.html">TESTIMONIALS</a>
-                </div>    
-                    <a class="nav-link" href="cart.html"><i class="nav-link fas fa-shopping-cart"></i>666.00$</a>
-                
-        </div>
+                </div>
             </div>
-        </div>
-    </header>
-    <div id="main-container" class="fluid-container">
-        <div class="starter-template mr-t5">
-            <h3>BEST PRODUCTS</h3>
-            <div class="clear"></div>
-        </div>
-        <div class="card-deck mt-5 row yt">
-            <div class="card col-md-4 shade hg">
-                <h4 class="text-center mt-4 mb-4">GOVNO S TVOROGOM</h4>
-                <div class="container mt-3">
-                    <img src="img/catalog_img.jpg" class="w-100 px-4">
-                </div>
-                <p class="mt-3 card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore 
-                    magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea 
-                    commodo consequat. Duis aute irure dolor in reprehenderit 
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in 
-                    culpa qui officia deserunt mollit anim id est laborum.</p>
-                <div class="d-flex justify-content-between card-body">
-                    <h4>100g</h4>
-                    <h4>220$</h4>
-                </div>
-                <button type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
+            <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
+                <a class="nav-link" href="cart.html"><i class="nav-link fas fa-shopping-cart"></i>666.00$</a>
             </div>
-            <div class="card col-md-4 shade hg middleone">
-                <h4 class="text-center mt-4 mb-4">GOVNO S TVOROGOM</h4>
-                <div class="container mt-3">
-                    <img src="img/catalog_img.jpg" class="w-100 px-4">
-                </div>
-                <p class="mt-3 card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore 
-                    magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea 
-                    commodo consequat. Duis aute irure dolor in reprehenderit 
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in 
-                    culpa qui officia deserunt mollit anim id est laborum.</p>
-                <div class="d-flex justify-content-between card-body">
-                    <h4>100g</h4>
-                    <h4>220$</h4>
-                </div>
-                <button type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
+          </nav>
+          <div id="content-container" class="container-fluid">
+            <div class="starter-template mr-t5 mb-5">
+                <h3>BEST PRODUCTS</h3>
+                <div class="clear"></div>
             </div>
-            <div class="card col-md-4 shade hg">
-                <h4 class="text-center mt-4 mb-4">GOVNO S TVOROGOM</h4>
-                <div class="container mt-3">
-                    <img src="img/catalog_img.jpg" class="w-100 px-4">
+            <div class="d-flex fl">
+                <div class="cards mb-4 shade">
+                    <h4 class="text-center mt-4 mb-4">GOVNO S TVOROGOM</h4>
+                    <div class="container mt-3">
+                        <img src="img/catalog_img.jpg" class="w-100 px-4">
+                    </div>
+                    <p class="mt-5 px-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="d-flex justify-content-between card-body">
+                        <h4>100g</h4>
+                        <h4>220$</h4>
+                    </div>
+                    <button type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
                 </div>
-                <p class="mt-3 card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore 
-                    magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea 
-                    commodo consequat. Duis aute irure dolor in reprehenderit 
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in 
-                    culpa qui officia deserunt mollit anim id est laborum.</p>
-                <div class="d-flex justify-content-between card-body">
-                    <h4>100g</h4>
-                    <h4>220$</h4>
+                <div class="cards mb-4 shade">
+                    <h4 class="text-center mt-4 mb-4">KAL TVOEY MAMASHI</h4>
+                    <div class="container mt-3">
+                        <img src="img/catalog_img.jpg" class="w-100 px-4">
+                    </div>
+                    <p class="mt-5 px-4mt-5 px-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="d-flex justify-content-between card-body">
+                        <h4>100g</h4>
+                        <h4>220$</h4>
+                    </div>
+                    <button type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
                 </div>
-                <button type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
+                <div class="cards mb-4 shade">
+                    <h4 class="text-center mt-4 mb-4">CHERKASH INTELLEGENTA</h4>
+                    <div class="container mt-3">
+                        <img src="img/catalog_img.jpg" class="w-100 px-4">
+                    </div>
+                    <p class="mt-5 px-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="d-flex justify-content-between card-body">
+                        <h4>100g</h4>
+                        <h4>220$</h4>
+                    </div>
+                    <button type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
+                </div>
+                <div class="cards mb-4 shade">
+                    <h4 class="text-center mt-4 mb-4">BABKIN STUL</h4>
+                    <div class="container mt-3">
+                        <img src="img/catalog_img.jpg" class="w-100 px-4">
+                    </div>
+                    <p class="mt-5 px-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="d-flex justify-content-between card-body">
+                        <h4>100g</h4>
+                        <h4>220$</h4>
+                    </div>
+                    <button type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
+                </div>
+                <div class="cards mb-4 shade">
+                    <h4 class="text-center mt-4 mb-4">ANALNYA ZHIZHA</h4>
+                    <div class="container mt-3">
+                        <img src="img/catalog_img.jpg" class="w-100 px-4">
+                    </div>
+                    <p class="mt-5 px-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="d-flex justify-content-between card-body">
+                        <h4>100g</h4>
+                        <h4>220$</h4>
+                    </div>
+                    <button type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
+                </div>
+                <div class="cards mb-4 shade">
+                    <h4 class="text-center mt-4 mb-4">VIPoop</h4>
+                    <div class="container mt-3">
+                        <img src="img/catalog_img.jpg" class="w-100 px-4">
+                    </div>
+                    <p class="mt-5 px-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="d-flex justify-content-between card-body">
+                        <h4>100g</h4>
+                        <h4>220$</h4>
+                    </div>
+                    <button type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
+                </div>
             </div>
-        </div>
-        <div class="card-deck mt-5 row mb-5">
-            <div class="card col-md-4 shade hg">
-                <h4 class="text-center mt-4 mb-4">GOVNO S TVOROGOM</h4>
-                <div class="container mt-3">
-                    <img src="img/catalog_img.jpg" class="w-100 px-4">
-                </div>
-                <p class="mt-3 card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore 
-                    magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea 
-                    commodo consequat. Duis aute irure dolor in reprehenderit 
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in 
-                    culpa qui officia deserunt mollit anim id est laborum.</p>
-                <div class="d-flex justify-content-between card-body">
-                    <h4>100g</h4>
-                    <h4>220$</h4>
-                </div>
-                <button type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
-            </div>
-            <div class="card col-md-4 shade hg">
-                <h4 class="text-center mt-4 mb-4">GOVNO S TVOROGOM</h4>
-                <div class="container mt-3">
-                    <img src="img/catalog_img.jpg" class="w-100 px-4">
-                </div>
-                <p class="mt-3 card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore 
-                    magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea 
-                    commodo consequat. Duis aute irure dolor in reprehenderit 
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in 
-                    culpa qui officia deserunt mollit anim id est laborum.</p>
-                <div class="d-flex justify-content-between card-body">
-                    <h4>100g</h4>
-                    <h4>220$</h4>
-                </div>
-                <button type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
-            </div>
-            <div class="card col-md-4 shade hg">
-                <h4 class="text-center mt-4 mb-4">GOVNO S TVOROGOM</h4>
-                <div class="container mt-3">
-                    <img src="img/catalog_img.jpg" class="w-100 px-4">
-                </div>
-                <p class="mt-3 card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore 
-                    magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea 
-                    commodo consequat. Duis aute irure dolor in reprehenderit 
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in 
-                    culpa qui officia deserunt mollit anim id est laborum.</p>
-                <div class="d-flex justify-content-between card-body">
-                    <h4>100g</h4>
-                    <h4>220$</h4>
-                </div>
-                <button type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
-            </div>
-        </div>
-     </div>
-</body>
+        </div>  
+    </body>
+    </html>

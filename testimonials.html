@@ -73,93 +73,102 @@
             height: 200px;
             width: 200px;
         }
+        #content {
+            width: 80%;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <div class="container">
-                <a href="home.html" class="navbar-brand d-flex align-items-center">
-                    <h1 class="logo p-1">SK</h1>
-                    <h2>SuperKal</h2>
-                </a>
-                    <a class="nav-link" href="home.html">MAIN</a>
-                    <a class="nav-link" href="catalog.html">CATALOG</a>
-                    <a class="nav-link" href="contact.html">CONTACTS</a>
-                    <a class="nav-link active" href="testimonials.html">TESTIMONIALS</a>
-                    <a class="nav-link" href="cart.html"><i class="nav-link fas fa-shopping-cart"></i>666.00$</a>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand d-flex align-items-center" href="home.html">
+            <h1 class="logo p-3">SK</h1>
+            <h2 class="ml-3">SuperKal</h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <div class="row justify-content-between">
+                <a class="nav-link" href="home.html">MAIN</a>
+                <a class="nav-link" href="catalog.html">CATALOG</a>
+                <a class="nav-link" href="contact.html">CONTACTS</a>
+                <a class="nav-link active" href="testimonials.html">TESTIMONIALS</a>
             </div>
         </div>
-    </header>
-    <main class="container">
-        <div class="starter-template mr-t5">
-            <h3>TESTIMONIALS</h3>
-            <div class="clear"></div>
-            </div>
-    </main>
-    <div class="content container mt-5">
-        <div class="row container">
-            <div class="col-sm-4 justify-content-center">
-                <img src="img/testimonials_1.jpeg" class="rounded-circle cartoo mx-auto d-block">
-            </div>
-            <div class="col-sm-8">    
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-        </div> 
-        <hr class="ml-5 mr-5">  
-    </div>
-    <div class="content container mt-5">
-        <div class="row">
-            <div class="col-sm-4">
-                <img src="img/testimonials_2.jpg" class="rounded-circle cartoo mx-auto d-block">
-            </div>
-            <div class="col-sm-8">    
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-        </div> 
-        <hr class="ml-5 mr-5">    
-    </div>
-    <div class="content container mt-5">
-        <div class="row">
-            <div class="col-sm-4">
-                <img src="img/testimonials_3.jpeg" class="rounded-circle cartoo mx-auto d-block">
-            </div>
-            <div class="col-sm-8">    
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-        </div> 
-        <hr class="ml-5 mr-5">   
-    </div>
-    <div class="content container mt-5">
-        <div class="row">
-            <div class="col-sm-4">
-                <img src="img/testimonials_4.jpg" class="rounded-circle mx-auto d-block cartoo">
-            </div>
-            <div class="col-sm-8">    
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-        </div>  
-        <hr class="ml-5 mr-5">  
-    </div>
+        <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
+            <a class="nav-link" href="cart.html"><i class="nav-link fas fa-shopping-cart"></i>666.00$</a>
+        </div>
+      </nav>
+      <div id="content" class="container-fluid">
+            <div class="starter-template mr-t5">
+                <h3>TESTIMONIALS</h3>
+                <div class="clear"></div>
+                </div>
+        <div class="content mt-5">
+            <div class="row">
+                <div class="col-sm-4 justify-content-center">
+                    <img src="img/testimonials_1.jpeg" class="rounded-circle cartoo mx-auto d-block">
+                </div>
+                <div class="col-sm-8">    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div> 
+            <hr class="ml-5 mr-5">  
+        </div>
+        <div class="content mt-5">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img src="img/testimonials_2.jpg" class="rounded-circle cartoo mx-auto d-block">
+                </div>
+                <div class="col-sm-8">    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div> 
+            <hr class="ml-5 mr-5">    
+        </div>
+        <div class="content mt-5">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img src="img/testimonials_3.jpeg" class="rounded-circle cartoo mx-auto d-block">
+                </div>
+                <div class="col-sm-8">    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div> 
+            <hr class="ml-5 mr-5">   
+        </div>
+        <div class="content mt-5">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img src="img/testimonials_4.jpg" class="rounded-circle mx-auto d-block cartoo">
+                </div>
+                <div class="col-sm-8">    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>  
+            <hr class="ml-5 mr-5">  
+        </div>
+    </div>    
 </body>
 </html>
