@@ -1,65 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <title>Bo</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="https://kit.fontawesome.com/1f01a88778.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/1f01a88778.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-         body {
+        body {
             background-color: #f6d62b;
             font-family: sans-serif;
             font-weight: bold;
             font-size: larger;
-        }
-        .logo {
-            background-color: black;
-            font-weight: bolder;
-        }
-        a {
-            text-decoration: none;
-            color: black;
-        }
-
-        
-        a:hover {
-            color: black;
-        }
-        h1 {
-            color: white;
-        }
-        .active {
-            text-decoration: underline 3px black;
-        }
-        .active:hover {
-            text-decoration: underline 3px black;
-        }
+            }
     </style>
-</head>
-<body>
-    <header>
-        <div class="navbar">
-            <div class="container">
-                <a href="MAIN BOOTSTRAP 2.html" class="navbar-brand d-flex align-items-center">
-                    <h1 class="logo p-1">SK</h1>
-                    <h2>SuperKal</h2>
-                </a>
-                    <a class="nav-link active" href="MAIN BOOTSTRAP 2.html">MAIN</a>
-                    <a class="nav-link" href="CATALOG BOOTSTRAP.html">CATALOG</a>
-                    <a class="nav-link" href="CONTACTS PAGE.html">CONTACTS</a>
-                    <a class="nav-link" href="TESTIMONIALS BOOTSTRAP.html">TESTIMONIALS</a>
-                    <a class="nav-link" href="CART BOOTSTRAP.html"><i class="nav-link fas fa-shopping-cart"></i>666.00$</a>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand d-flex align-items-center" href="home.html">
+                <h1 class="logo p-3">SK</h1>
+                <h2 class="ml-3">SuperKal</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <div class="row justify-content-between">
+                    <a class="nav-link" href="home.html">MAIN</a>
+                    <a class="nav-link active" href="catalog.html">CATALOG</a>
+                    <a class="nav-link" href="contact.html">CONTACTS</a>
+                    <a class="nav-link" href="testimonials.html">TESTIMONIALS</a>
+                </div>
             </div>
+            <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
+                <a class="nav-link" href="cart.html"><i class="nav-link fas fa-shopping-cart"></i>666.00$</a>
+            </div>
+          </nav>
+          <!-- <a href="home.html" class="navbar-brand d-flex align-items-center justify-content-around">
+            <h1 class="logo p-3">SK</h1>
+            <h2 class="ml-3">SuperKal</h2>
+        </a>
+        <div class="row justify-content-between">
+            <a class="nav-link" href="home.html">MAIN</a>
+            <a class="nav-link active" href="catalog.html">CATALOG</a>
+            <a class="nav-link" href="contact.html">CONTACTS</a>
+            <a class="nav-link" href="testimonials.html">TESTIMONIALS</a>
         </div>
-    </header>
-
-</body>
-</html>
+        <a class="nav-link" href="cart.html"><i class="nav-link fas fa-shopping-cart"></i>666.00$</a> -->
+    </body>
+    </html>
