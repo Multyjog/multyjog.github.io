@@ -1,3 +1,4 @@
+/* This is from page home */
 body {
     background-color: #f6d62b;
     font-family: sans-serif;
@@ -7,6 +8,7 @@ body {
 .logo {
     background-color: black;
     font-weight: bolder;
+    font-size: larger;
 }
 a {
     text-decoration: none;
@@ -26,8 +28,9 @@ h1 {
     text-shadow: 2px 2px red;
     color: white;
 }
-p {
+.redshade {
     text-shadow: 1px 1px red;
+    font-size: large;
 }
 .bolder {
     font-weight: bolder;
@@ -38,132 +41,107 @@ p {
 .active:hover {
     text-decoration: underline 3px black;
 }
-body {
-    background-color: #f6d62b;
-    font-family: sans-serif;
+h2 {
     font-weight: bold;
-    font-size: larger;
+
 }
-.logo {
-    background-color: black;
-    font-weight: bolder;
+footer {
+    width: 80%;
+    margin: auto;
 }
-a {
-    text-decoration: none;
-    color: black;
-}
-a:hover {
-    color: black;
-}
-h1 {
-    color: white;
-}
-.mr-t5 {
-    margin-top: 5%;
-} 
-h3 { 
-    border-bottom: 1rem double white; 
+/* /home */
+
+/* This is from page catalog */
+h3 {
+    border-bottom: 1rem double white;
     float: left;
     color: white;
     font-weight: bolder;
 }
+
 .clear {
     clear: both;
 }
-.card {
-    background-color: black;
-    color: white;
-}
-h4 {
-    font-weight: bolder;
-}
+
 .active {
     text-decoration: underline 3px black;
 }
+
 .active:hover {
     text-decoration: underline 3px black;
 }
-body {
-    background-color: #f6d62b;
-    font-family: sans-serif;
+
+p {
+    font-size: small;
+    font-family: montserrat;
+}
+
+h2 {
     font-weight: bold;
-    font-size: larger;
 }
-.logo {
+
+#content {
+    width: 80%;
+
+}
+
+.fl {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-grow: 1;
+
+}
+
+.shade {
+    box-shadow: 3px 3px 10px;
     background-color: black;
-    font-weight: bolder;
-}
-a {
-    text-decoration: none;
-    color: black;
-}
-a:hover {
-    color: black;
-}
-h1 {
     color: white;
 }
-.mr-t5 {
-    margin-top: 5%;
-} 
-h3 { 
-    border-bottom: 1rem double white; 
-    float: left;
+
+.btn-warning {
+    background-color: #e48900;
+    font-weight: bolder;
     color: white;
+    font-size: large;
+}
+
+h4 {
     font-weight: bolder;
 }
-.clear {
-    clear: both;
+
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    flex: 0 3 100%;
 }
+
+@media screen and (min-width: 500px) {
+    .cards {
+        flex: 0 1 45%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .cards {
+        flex: 0 1 28%;
+    }
+}
+/* /catalog */
+
+/* This is from page contacts */
 .text {
     font-weight: bolder;
 }
+
 iframe {
     height: 100%;
     width: 100%;
 }
-.active {
-    text-decoration: underline 3px black;
-}
-.active:hover {
-    text-decoration: underline 3px black;
-}
-body {
-    background-color: #f6d62b;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: larger;
-}
-.logo {
-    background-color: black;
-    font-weight: bolder;
-}
-a {
-    text-decoration: none;
-    color: black;
-}
-a:hover {
-    color: black;
-}
-h1 {
-    color: white;
-}
-.mr-t5 {
-    margin-top: 5%;
-} 
-h3 { 
-    border-bottom: 1rem double white; 
-    float: left;
-    color: white;
-    font-weight: bolder;
-}
-.clear {
-    clear: both;
-}
-.text {
-    font-weight: bolder;
-}
-p {
+/* /contacts */
+
+/* This is from page testimonials */
+.testimonialtext {
     font-weight: bolder;
     font-size: large;
 }
@@ -173,63 +151,17 @@ hr {
     background-color: white;
     border-width: 0;
 }
-.active {
-    text-decoration: underline 3px black;
+.cartoo {
+    height: 200px;
+    width: 200px;
 }
-.active:hover {
-    text-decoration: underline 3px black;
-}
-body {
-    background-color: #f6d62b;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: larger;
-}
-.logo {
-    background-color: black;
-    font-weight: bolder;
-}
-a {
-    text-decoration: none;
-    color: black;
-}
-a:hover {
-    color: black;
-}
-h1 {
-    color: white;
-}
-.mr-t5 {
-    margin-top: 5%;
-} 
-h3 { 
-    border-bottom: 1rem double white; 
-    float: left;
-    color: white;
-    font-weight: bolder;
-}
-.clear {
-    clear: both;
-}
-.text {
-    font-weight: bolder;
-}
-p, h4 {
+/* /testimonials */
+
+/* This is from page cart */
+.orderinfo {
     font-weight: bolder;
     font-size: large;
 }
-hr {
-    height: 5px;
-    color: white;
-    background-color: white;
-    border-width: 0;
-}
-h4 {
+.price {
     font-size: xx-large;
-}
-.active {
-    text-decoration: underline 3px black;
-}
-.active:hover {
-    text-decoration: underline 3px black;
 }

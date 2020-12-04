@@ -1,106 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Bo</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="https://kit.fontawesome.com/1f01a88778.js" crossorigin="anonymous"></script>
+    <title>Our Contacts</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/1f01a88778.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-         body {
-            background-color: #f6d62b;
-            font-family: sans-serif;
-            font-weight: bold;
-            font-size: larger;
-        }
-        .logo {
-            background-color: black;
-            font-weight: bolder;
-        }
-        a {
-            text-decoration: none;
-            color: black;
-        }
-        a:hover {
-            color: black;
-        }
-        h1 {
-            color: white;
-        }
-        .mr-t5 {
-            margin-top: 5%;
-        } 
-        h3 { 
-            border-bottom: 1rem double white; 
-            float: left;
-            color: white;
-            font-weight: bolder;
-        }
-        .clear {
-            clear: both;
-        }
-        .text {
-            font-weight: bolder;
-        }
-        iframe {
-            height: 100%;
-            width: 100%;
-        }
-        .active {
-            text-decoration: underline 3px black;
-        }
-        .active:hover {
-            text-decoration: underline 3px black;
-        }
-    </style>
+    <link rel="stylesheet" href="site.css">
 </head>
+
 <body>
-    <header>
-        <div class="navbar">
-            <div class="container">
-                <a href="MAIN BOOTSTRAP 2.html" class="navbar-brand d-flex align-items-center">
-                    <h1 class="logo p-1">SK</h1>
-                    <h2>SuperKal</h2>
-                </a>
-                    <a class="nav-link" href="MAIN BOOTSTRAP 2.html">MAIN</a>
-                    <a class="nav-link" href="CATALOG BOOTSTRAP.html">CATALOG</a>
-                    <a class="nav-link active" href="CONTACTS PAGE.html">CONTACTS</a>
-                    <a class="nav-link" href="TESTIMONIALS BOOTSTRAP.html">TESTIMONIALS</a>
-                    <a class="nav-link" href="CART BOOTSTRAP.html"><i class="nav-link fas fa-shopping-cart"></i>666.00$</a>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand d-flex align-items-center" href="home.html">
+            <h1 class="logo p-3">SK</h1>
+            <h2 class="ml-3">SuperKal</h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <div class="row justify-content-between">
+                <a class="nav-link" href="home.html">MAIN</a>
+                <a class="nav-link" href="catalog.html">CATALOG</a>
+                <a class="nav-link active" href="contact.html">CONTACTS</a>
+                <a class="nav-link" href="testimonials.html">TESTIMONIALS</a>
             </div>
         </div>
-    </header>
-    <main class="container">
+        <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
+            <a class="nav-link" href="cart.html"><i class="nav-link fas fa-shopping-cart"></i>666.00$</a>
+        </div>
+    </nav>
+    <div id="content" class="container-fluid">
         <div class="starter-template mr-t5">
             <h3>CONTACTS</h3>
             <div class="clear"></div>
-            </div>
-    </main>
-    <content class="container">
-        <div class="container ">
-            <h4 class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore 
-                magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                exercitation ullamco laboris nisi ut aliquip ex ea 
-                commodo consequat. Duis aute irure dolor in reprehenderit 
-                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in 
-                culpa qui officia deserunt mollit anim id est laborum.</h4>
         </div>
-        <div class="container">
-            <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 500px">
-                <iframe src="https://maps.google.com/maps?q=chicago&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-                  style="border:0" allowfullscreen></iframe>
-              </div>
+        <h4 class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+             sed do eiusmod tempor incididunt ut labore et dolore
+             magna aliqua. Ut enim ad minim veniam, quis nostrud
+             exercitation ullamco laboris nisi ut aliquip ex ea
+             commodo consequat. Duis aute irure dolor in reprehenderit
+             in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+             Excepteur sint occaecat cupidatat non proident, sunt in
+             culpa qui officia deserunt mollit anim id est laborum.</h4>
+        <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 600px">
+            <iframe src="https://maps.google.com/maps?q=chicago&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                style="border:0" allowfullscreen></iframe>  
         </div>
-        
-    </content>
+    </div>
 </body>
+
 </html>
