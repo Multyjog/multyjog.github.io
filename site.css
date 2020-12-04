@@ -1,7 +1,7 @@
 /* This is from page home */
 body {
     background-color: #f6d62b;
-    font-family: sans-serif;
+    font-family: montserrat;
     font-weight: bold;
     font-size: larger;
 }
@@ -151,7 +151,7 @@ hr {
     background-color: white;
     border-width: 0;
 }
-.cartoo {
+.pic {
     height: 200px;
     width: 200px;
 }
