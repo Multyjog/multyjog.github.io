@@ -190,3 +190,14 @@ hr {
     position: absolute;
     right: 20px;
 }
+.drpdwn {
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (min-width: 990px) {
+    .drpdwn {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
