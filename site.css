@@ -165,6 +165,31 @@ hr {
 .price {
     font-size: xx-large;
 }
+.card-title {
+    font-size: x-large;
+    padding-top: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+.popup {
+    max-width: 60%;
+    margin: auto;
+}
+.popupheader {
+    padding: 1rem 1rem;
+    display: flex;
+}
+.popupfooter {
+    display: grid;
+    justify-content: end;
+}
+.cursor {
+    cursor: pointer;
+}
+.closemark {
+    position: absolute;
+    right: 20px;
+}
 .drpdwn {
     display: flex;
     flex-direction: column;
@@ -175,3 +200,4 @@ hr {
         flex-direction: row;
     }
 }
+
