@@ -183,3 +183,10 @@ hr {
     display: grid;
     justify-content: end;
 }
+.cursor {
+    cursor: pointer;
+}
+.closemark {
+    position: absolute;
+    right: 20px;
+}
