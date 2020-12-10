@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="site.css">
     <title>Our products</title>
+    <script src="site.js"></script>
 </head>
 
 <body>
@@ -35,7 +36,7 @@
             </div>
         </div>
         <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
-            <a class="nav-link" href="cart.html"><i class="nav-link fas fa-shopping-cart"></i>666.00$</a>
+            <a class="nav-link" href="cart.html"><i class="nav-link fas fa-shopping-cart"></i><span id="total">$0.00</span></a>
         </div>
     </nav>
     <div id="content" class="container-fluid">
@@ -88,7 +89,7 @@
                     <h4>100g</h4>
                     <h4>220$</h4>
                 </div>
-                <button type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
+                <button onclick="totalSum()" type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
             </div>
             <div class="cards mb-4 shade">
                 <h4 class="text-center mt-4 mb-4">KAL TVOEY MAMASHI</h4>
@@ -134,7 +135,7 @@
                     <h4>100g</h4>
                     <h4>220$</h4>
                 </div>
-                <button type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
+                <button onclick="totalSum()" type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
             </div>
             <div class="cards mb-4 shade">
                 <h4 class="text-center mt-4 mb-4">CHERKASH INTELLEGENTA</h4>
@@ -180,7 +181,7 @@
                     <h4>100g</h4>
                     <h4>220$</h4>
                 </div>
-                <button type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
+                <button onclick="totalSum()" type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
             </div>
             <div class="cards mb-4 shade">
                 <h4 class="text-center mt-4 mb-4">BABKIN STUL</h4>
@@ -226,7 +227,7 @@
                     <h4>100g</h4>
                     <h4>220$</h4>
                 </div>
-                <button type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
+                <button onclick="totalSum()" type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
             </div>
             <div class="cards mb-4 shade">
                 <h4 class="text-center mt-4 mb-4">ANALNAYA ZHIZHA</h4>
@@ -272,7 +273,7 @@
                     <h4>100g</h4>
                     <h4>220$</h4>
                 </div>
-                <button type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
+                <button onclick="totalSum()" type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
             </div>
             <div class="cards mb-4 shade">
                 <h4 class="text-center mt-4 mb-4">VIPoop</h4>
@@ -318,7 +319,7 @@
                     <h4>100g</h4>
                     <h4>220$</h4>
                 </div>
-                <button type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
+                <button onclick="totalSum()" type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
             </div>
         </div>
     </div>
