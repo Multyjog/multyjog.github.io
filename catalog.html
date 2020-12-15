@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="site.css">
     <title>Our products</title>
+    <script src="site.js"></script>
 </head>
 
 <body>
@@ -35,7 +36,7 @@
             </div>
         </div>
         <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
-            <a href="cart.html"><i class="nav-link fas fa-shopping-cart"></i>666.00$</a>
+            <a class="nav-link" href="cart.html"><i class="nav-link fas fa-shopping-cart"></i><span id="total">$0.00</span></a>
         </div>
     </nav>
     <div id="content" class="container-fluid">
@@ -90,7 +91,7 @@
                     <h4>100g</h4>
                     <h4>220$</h4>
                 </div>
-                <button type="button" class="btn btn-warning btn-sm card-body mt-2 mx-4 mb-3">ADD TO CART</button>
+                <button onclick="totalSum()" type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
             </div>
 
             <!-- Modal -->
@@ -175,7 +176,7 @@
                     <h4>100g</h4>
                     <h4>220$</h4>
                 </div>
-                <button type="button" class="btn btn-warning btn-sm card-body mt-2 mx-4 mb-3">ADD TO CART</button>
+                <button onclick="totalSum()" type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
             </div>
 
             <!-- Modal 2 -->
@@ -260,7 +261,7 @@
                     <h4>100g</h4>
                     <h4>220$</h4>
                 </div>
-                <button type="button" class="btn btn-warning btn-sm card-body mt-2 mx-4 mb-3">ADD TO CART</button>
+                <button onclick="totalSum()" type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
             </div>
 
             <!-- Modal 3 -->
@@ -345,7 +346,7 @@
                     <h4>100g</h4>
                     <h4>220$</h4>
                 </div>
-                <button type="button" class="btn btn-warning btn-sm card-body mt-2 mx-4 mb-3">ADD TO CART</button>
+                <button onclick="totalSum()" type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
             </div>
 
             <!-- Modal 4 -->
@@ -430,7 +431,7 @@
                     <h4>100g</h4>
                     <h4>220$</h4>
                 </div>
-                <button type="button" class="btn btn-warning btn-sm card-body mt-2 mx-4 mb-3">ADD TO CART</button>
+                <button onclick="totalSum()" type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
             </div>
 
             <!-- Modal 5 -->
@@ -515,7 +516,7 @@
                     <h4>100g</h4>
                     <h4>220$</h4>
                 </div>
-                <button type="button" class="btn btn-warning btn-sm card-body mt-2 mx-4 mb-3">ADD TO CART</button>
+                <button onclick="totalSum()" type="button" class="btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
             </div>
 
             <!-- Modal 6 -->
