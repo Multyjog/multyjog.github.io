@@ -21,5 +21,4 @@ function renderCart() {
     let message = "$" + dollar + "." + centsZero + cents
     
     totalSumContainer.innerHTML = message
-
 }
