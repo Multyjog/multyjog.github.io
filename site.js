@@ -1,15 +1,24 @@
-let totalSumContainer 
-let newTotalSum
+let totalSumContainer
+let newTotalSum = 0
+document.addEventListener('DOMContentLoaded', function () {
+    totalSumContainer = document.getElementById("total");
+    newTotalSum = parseInt(localStorage.getItem('mySum') || 0)
+    renderCart()
+})
 
-function totalSum() {
+function addProduct() {
     newTotalSum += 22200
+    localStorage.setItem('mySum', newTotalSum)
+    renderCart()
+}
+function renderCart() {
     let dollar = parseInt(newTotalSum / 100)
     let cents = newTotalSum - (dollar * 100)
-    let message = "$" + dollar + "." + cents
+    let centsZero = "0"
+    if (cents > 9){
+        centsZero = ""
+    }
+    let message = "$" + dollar + "." + centsZero + cents
+    
     totalSumContainer.innerHTML = message
-
 }
-document.addEventListener('DOMContentLoaded', function () {
-    newTotalSum = 0
-    totalSumContainer = document.getElementById("total");
-});
