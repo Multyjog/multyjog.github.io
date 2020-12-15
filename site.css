@@ -124,7 +124,7 @@ h4 {
 
 @media screen and (min-width: 1000px) {
     .cards {
-        flex: 0 1 28%;
+        flex: 0 1 26%;
     }
 }
 /* /catalog */
@@ -199,5 +199,8 @@ hr {
         display: flex;
         flex-direction: row;
     }
+}
+.marg {
+    margin: 0 3rem 2rem;
 }
 
