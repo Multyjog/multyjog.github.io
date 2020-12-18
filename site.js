@@ -41,8 +41,9 @@ function modalRender(product) {
     let modal = document.querySelector("#firstmodalCenter")
     let modalPrice = modal.querySelector(".modal-price")
     let modalTitle = modal.querySelector(".modal-title")
+    let modalWeight = document.querySelectorAll(".modal-weight")[0]
     let modalButton = modal.querySelector(".modal-button")
-    var newModalButton = modalButton.cloneNode(true);
+    let newModalButton = modalButton.cloneNode(true);
     modalButton.parentNode.replaceChild(newModalButton, modalButton);
     newModalButton.addEventListener('click', function () {
         addProduct(product)
@@ -50,6 +51,7 @@ function modalRender(product) {
     })
     modalTitle.innerHTML = product.title
     modalPrice.innerHTML = renderSum(product.price)
+    modalWeight.innerHTML = product.weight
 
 }
 
@@ -59,6 +61,7 @@ function Product(item) {
     this.title = item.title
     this.price = item.price
     this.card = undefined
+    this.weight = item.weight
     this.registerEvents = function () {
         let product = this
         let addButton = this.card.querySelector(".add-to-cart-trigger")
@@ -80,6 +83,8 @@ function Product(item) {
         cardTitle.innerHTML = this.title
         let cardCosts = clnInvCard.getElementsByClassName("card-cost")[0]
         cardCosts.innerHTML = renderSum(this.price)
+        let cardWeight = clnInvCard.getElementsByClassName("card-weight")[0]
+        cardWeight.innerHTML = this.weight
 
         let carousel = clnInvCard.querySelector(".carousel")
         let carouselId = "carousel_" + this.id
@@ -99,12 +104,12 @@ function Product(item) {
 API = { //This is our future servere
     getProducts: function () { //This is his method
         return [
-            { id: 0, title: "BABKIN STUL", price: 10000 },
-            { id: 1, title: "VIPooP", price: 60000 },
-            { id: 2, title: "CHERKASH INTELLIGENTA", price: 30000 },
-            { id: 3, title: "TVOROZNIY KAL", price: 15000 },
-            { id: 4, title: "ANALNYA ZHIZHA", price: 20000 },
-            { id: 5, title: "LICHINKA TVOEY MAMASHI", price: 50000 },
+            { id: 0, title: "BABKIN STUL", price: 10000, weight: "120g" },
+            { id: 1, title: "VIPooP", price: 60000, weight: "70g" },
+            { id: 2, title: "CHERKASH INTELLIGENTA", price: 30000, weight: "5 pieces" },
+            { id: 3, title: "TVOROZNIY KAL", price: 15000, weight: "100g" },
+            { id: 4, title: "ANALNYA ZHIZHA", price: 20000, weight: "500ml" },
+            { id: 5, title: "LICHINKA TVOEY MAMASHI", price: 50000, weight: "80kg" },
         ]
     }
 }
