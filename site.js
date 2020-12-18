@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     totalSumContainer = document.getElementById("total");
     newTotalSum = parseInt(localStorage.getItem('mySum') || 0)
     renderCart()
-    let products = API.getProducts().map( // для каждого элемента массива выполняет функцию и возвращает новый массив 
+    let products = API.getProducts().map( // for each element of massive complete the function and return a new massive 
         function (item) {
             return new Product(item)
         }
@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
 function addProduct(product) {
     newTotalSum += parseInt(product.price)
     localStorage.setItem('mySum', newTotalSum)
-    console.log(newTotalSum)
     renderCart()
 }
 
@@ -63,7 +62,6 @@ function Product(item) {
     this.registerEvents = function () {
         let product = this
         let addButton = this.card.querySelector(".add-to-cart-trigger")
-        console.log(addButton)
         addButton.addEventListener('click', function () {
             addProduct(product)
         })
@@ -80,7 +78,7 @@ function Product(item) {
         clnInvCard.id = "product_" + this.id
         let cardTitle = clnInvCard.getElementsByClassName("card-title")[0]
         cardTitle.innerHTML = this.title
-        let cardCosts = clnInvCard.getElementsByClassName("card-costs")[0]
+        let cardCosts = clnInvCard.getElementsByClassName("card-cost")[0]
         cardCosts.innerHTML = renderSum(this.price)
 
         let carousel = clnInvCard.querySelector(".carousel")
@@ -98,8 +96,8 @@ function Product(item) {
         this.card = clnInvCard
     }
 }
-API = { //Это сервер в перспективе
-    getProducts: function () { //Это его метод
+API = { //This is our future servere
+    getProducts: function () { //This is his method
         return [
             { id: 0, title: "BABKIN STUL", price: 10000 },
             { id: 1, title: "VIPooP", price: 60000 },
@@ -110,77 +108,3 @@ API = { //Это сервер в перспективе
         ]
     }
 }
-
-
-// let totalSumContainer
-// let newTotalSum
-
-// function totalSum() {
-//     newTotalSum += 22200
-//     let dollar = parseInt(newTotalSum / 100)
-//     let cents = newTotalSum - (dollar * 100)
-//     let message = "$" + dollar + "." + cents
-//     totalSumContainer.innerHTML = message
-
-// }
-// document.addEventListener('DOMContentLoaded', function () {
-//     newTotalSum = 0
-//     totalSumContainer = document.getElementById("total");
-// });
-
-// let calculator = {
-//     sum() {
-//       return this.a + this.b;
-//     },
-
-//     mul() {
-//       return this.a * this.b;
-//     },
-
-//     read() {
-//       this.a = +prompt('a?', 0);
-//       this.b = +prompt('b?', 0);
-//     }
-//   };
-
-// function Calculator(a, b) {
-//     this.a = a;
-//     this.b = b;
-//     this.sum = function () {
-//         return this.a + this.b;
-//     }
-// }
-
-// let calculator = new Calculator(2, 2);
-// let calculator2 = new Calculator(5, 3);
-// calculator.sum()
-// calculator2.sum()
-
-// function Accumulator(startingValue) {
-//     this.value = startingValue;
-//     this.read = function (mul) {
-//         this.value = this.value + mul
-//         return this.value
-//     }
-//     this.prompt = function () {
-//         return this.read(+prompt())
-
-//     }
-//     this.readTwo = function (mul, mulTwo) {
-//         this.read(mul)
-//         return this.read(mulTwo)
-//     }
-//     this.reset = function (value) {
-//         this.value = value
-//     }
-//     this.isPositive = function () {
-//         return this.value > 0
-//     }
-//     this.render = function (element){
-//         element.innerHTML = "accumulator has value: " + this.value
-//     }
-
-// }
-
-// let accumulator = new Accumulator(45)
-
