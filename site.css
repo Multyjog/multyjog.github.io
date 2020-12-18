@@ -207,3 +207,12 @@ hr {
 #hiddenCard {
     display: none;
 }
+.sticky {
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    background-color: #f6d62b;
+    border-bottom: 2px solid white;
+}
