@@ -1,24 +1,110 @@
 let totalSumContainer
 let newTotalSum = 0
+
 document.addEventListener('DOMContentLoaded', function () {
     totalSumContainer = document.getElementById("total");
     newTotalSum = parseInt(localStorage.getItem('mySum') || 0)
     renderCart()
+    let products = API.getProducts().map( // for each element of massive complete the function and return a new massive 
+        function (item) {
+            return new Product(item)
+        }
+    )
+    products.forEach(function (item) {
+        item.render()
+        item.registerEvents()
+    })
 })
 
-function addProduct() {
-    newTotalSum += 22200
+function addProduct(product) {
+    newTotalSum += parseInt(product.price)
     localStorage.setItem('mySum', newTotalSum)
     renderCart()
 }
+
 function renderCart() {
-    let dollar = parseInt(newTotalSum / 100)
-    let cents = newTotalSum - (dollar * 100)
+    totalSumContainer.innerHTML = renderSum(newTotalSum)
+}
+
+function renderSum(price) {
+    let dollar = parseInt(price / 100)
+    let cents = price - (dollar * 100)
     let centsZero = "0"
-    if (cents > 9){
+    if (cents > 9) {
         centsZero = ""
     }
     let message = "$" + dollar + "." + centsZero + cents
-    
-    totalSumContainer.innerHTML = message
+    return message
+}
+
+function modalRender(product) {
+    let modal = document.querySelector("#firstmodalCenter")
+    let modalPrice = modal.querySelector(".modal-price")
+    let modalTitle = modal.querySelector(".modal-title")
+    let modalButton = modal.querySelector(".modal-button")
+    var newModalButton = modalButton.cloneNode(true);
+    modalButton.parentNode.replaceChild(newModalButton, modalButton);
+    newModalButton.addEventListener('click', function () {
+        addProduct(product)
+
+    })
+    modalTitle.innerHTML = product.title
+    modalPrice.innerHTML = renderSum(product.price)
+
+}
+
+
+function Product(item) {
+    this.id = item.id
+    this.title = item.title
+    this.price = item.price
+    this.card = undefined
+    this.registerEvents = function () {
+        let product = this
+        let addButton = this.card.querySelector(".add-to-cart-trigger")
+        addButton.addEventListener('click', function () {
+            addProduct(product)
+        })
+        let cardTitle = this.card.querySelector(".card-title")
+        cardTitle.addEventListener('click', function () {
+            modalRender(product)
+        })
+
+    }
+    this.render = function () {
+        let invCard = document.getElementById("hiddenCard")
+        let invCardParent = invCard.parentNode
+        let clnInvCard = invCard.cloneNode(true)
+        clnInvCard.id = "product_" + this.id
+        let cardTitle = clnInvCard.getElementsByClassName("card-title")[0]
+        cardTitle.innerHTML = this.title
+        let cardCosts = clnInvCard.getElementsByClassName("card-cost")[0]
+        cardCosts.innerHTML = renderSum(this.price)
+
+        let carousel = clnInvCard.querySelector(".carousel")
+        let carouselId = "carousel_" + this.id
+        carousel.id = carouselId
+
+        let carouselImgs = Array.from(clnInvCard.querySelectorAll("li"))
+        carouselImgs.forEach(function (carouselImg) {
+            carouselImg.dataset.target = "#" + carouselId
+        })
+        clnInvCard.querySelector(".carousel-control-prev").setAttribute("href", "#" + carouselId)
+        clnInvCard.querySelector(".carousel-control-next").setAttribute("href", "#" + carouselId)
+
+        invCardParent.appendChild(clnInvCard)
+        this.card = clnInvCard
+    }
+}
+API = { //This is our future servere
+    getProducts: function () { //This is his method
+        return [
+            { id: 0, title: "BABKIN STUL", price: 10000 },
+            { id: 1, title: "VIPooP", price: 60000 },
+            { id: 2, title: "CHERKASH INTELLIGENTA", price: 30000 },
+            { id: 3, title: "TVOROZNIY KAL", price: 15000 },
+            { id: 4, title: "ANALNYA ZHIZHA", price: 20000 },
+            { id: 5, title: "LICHINKA TVOEY MAMASHI", price: 50000 },
+        ]
+    }
 }

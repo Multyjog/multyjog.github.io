@@ -200,4 +200,6 @@ hr {
         flex-direction: row;
     }
 }
-
+#hiddenCard {
+    display: none;
+}
