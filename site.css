@@ -204,3 +204,6 @@ hr {
     margin: 0 3rem 2rem;
 }
 
+#hiddenCard {
+    display: none;
+}
