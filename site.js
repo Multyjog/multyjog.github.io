@@ -12,16 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
     )
     products.forEach(function (item) {
         item.render()
-    })
-    let addButtons = Array.from(document.getElementsByClassName("add-to-cart-trigger"))
-    addButtons.forEach(function (addButton) {
-        addButton.addEventListener('click', addProduct)
+        item.registerEvents()
     })
 })
 
-function addProduct(event) {
-    let addButton = event.target
-    newTotalSum += parseInt(addButton.dataset.price)
+function addProduct(product) {
+    newTotalSum += parseInt(product.price)
     localStorage.setItem('mySum', newTotalSum)
     console.log(newTotalSum)
     renderCart()
@@ -30,6 +26,7 @@ function addProduct(event) {
 function renderCart() {
     totalSumContainer.innerHTML = renderSum(newTotalSum)
 }
+
 function renderSum(price) {
     let dollar = parseInt(price / 100)
     let cents = price - (dollar * 100)
@@ -41,12 +38,41 @@ function renderSum(price) {
     return message
 }
 
+function modalRender(product) {
+    let modal = document.querySelector("#firstmodalCenter")
+    let modalPrice = modal.querySelector(".modal-price")
+    let modalTitle = modal.querySelector(".modal-title")
+    let modalButton = modal.querySelector(".modal-button")
+    var newModalButton = modalButton.cloneNode(true);
+    modalButton.parentNode.replaceChild(newModalButton, modalButton);
+    newModalButton.addEventListener('click', function () {
+        addProduct(product)
+
+    })
+    modalTitle.innerHTML = product.title
+    modalPrice.innerHTML = renderSum(product.price)
+
+}
 
 
 function Product(item) {
     this.id = item.id
     this.title = item.title
     this.price = item.price
+    this.card = undefined
+    this.registerEvents = function () {
+        let product = this
+        let addButton = this.card.querySelector(".add-to-cart-trigger")
+        console.log(addButton)
+        addButton.addEventListener('click', function () {
+            addProduct(product)
+        })
+        let cardTitle = this.card.querySelector(".card-title")
+        cardTitle.addEventListener('click', function () {
+            modalRender(product)
+        })
+
+    }
     this.render = function () {
         let invCard = document.getElementById("hiddenCard")
         let invCardParent = invCard.parentNode
@@ -56,8 +82,6 @@ function Product(item) {
         cardTitle.innerHTML = this.title
         let cardCosts = clnInvCard.getElementsByClassName("card-costs")[0]
         cardCosts.innerHTML = renderSum(this.price)
-        let addButton = clnInvCard.getElementsByClassName("add-to-cart-trigger")[0]
-        addButton.dataset.price = this.price
 
         let carousel = clnInvCard.querySelector(".carousel")
         let carouselId = "carousel_" + this.id
@@ -70,8 +94,8 @@ function Product(item) {
         clnInvCard.querySelector(".carousel-control-prev").setAttribute("href", "#" + carouselId)
         clnInvCard.querySelector(".carousel-control-next").setAttribute("href", "#" + carouselId)
 
-
         invCardParent.appendChild(clnInvCard)
+        this.card = clnInvCard
     }
 }
 API = { //Это сервер в перспективе
