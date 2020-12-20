@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
-            <a class="nav-link" href="cart.html"><i class="nav-link fas fa-shopping-cart"></i><span id="total">$0.00</span></a>
+            <a class="nav-link active" href="cart.html"><i class="nav-link fas fa-shopping-cart"></i><span id="total">$0.00</span></a>
         </div>
     </nav>
     <div id="content" class="container-fluid">
@@ -44,10 +44,11 @@
         </div>
         <div class="content mt-5">
             <div class="row">
-                <div class="col-sm-4 justify-content-center">
+                <div class="col-sm-3 justify-content-center">
                     <img src="img/cart_img.png" class="rounded-circle w-50 h-100 mx-auto d-block">
                 </div>
                 <div class="col-sm-6">
+                    <h6 class="d-flex justify-content-center product-title">VIPoop</h6>
                     <p class="orderinfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -55,46 +56,22 @@
                         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
-                <div class="col-sm-2 d-flex justify-content-between align-items-center">
-                    <h4 class="price">100g</h4>
-                    <h4 class="price">220$</h4>
+                <div class="col-sm-2 d-flex justify-content-between align-items-center flex-wrap">
+                    <h4 class="price card-weight">100g</h4>
+                    <h4 class="price card-cost">220$</h4> 
+                    <form action="/action_page.php">
+                        <label for="quantity">Quantity:</label>
+                        <input type="submit" value="-">
+                        <input type="number" id="quantity" name="quantity" min="1" max="125">
+                        <input type="submit" value="+">
+                      </form>
+                </div>
+                <div class="col-sm-1 d-flex justify-content-around align-self-center">
+                    <a href="#"><i class="close button nav-link fas fa-times-circle"></i></a>
                 </div>
             </div>
             <hr class="ml-5 mr-5">
         </div>
-        <div class="content mt-5">
-            <div class="row">
-                <div class="col-sm-4 justify-content-center">
-                    <img src="img/cart_img.png" class="rounded-circle w-50 h-100 mx-auto d-block">
-                </div>
-                <div class="col-sm-8">
-                    <p class="orderinfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
-            <hr class="ml-5 mr-5">
-        </div>
-        <div class="content mt-5">
-            <div class="row">
-                <div class="col-sm-4 justify-content-center">
-                    <img src="img/cart_img.png" class="rounded-circle w-50 h-100 mx-auto d-block">
-                </div>
-                <div class="col-sm-8">
-                    <p class="orderinfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
-            <hr class="ml-5 mr-5">
-        </div>
-    </div>
 
 </body>
 

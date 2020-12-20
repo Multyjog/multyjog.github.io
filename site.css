@@ -216,3 +216,12 @@ hr {
     background-color: #f6d62b;
     border-bottom: 2px solid white;
 }
+.product-title {
+    font-size: x-large;
+    font-weight: bolder;
+}
+.close-button {
+    background-color: black;
+    color: white;
+    padding: 5px;
+}

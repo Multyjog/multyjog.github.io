@@ -1,9 +1,9 @@
 let totalSumContainer
-let newTotalSum = 0
+let user = new User()
+user.load()
 
 document.addEventListener('DOMContentLoaded', function () {
     totalSumContainer = document.getElementById("total");
-    newTotalSum = parseInt(localStorage.getItem('mySum') || 0)
     renderCart()
     let products = API.getProducts().map( // for each element of massive complete the function and return a new massive 
         function (item) {
@@ -16,14 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 })
 
-function addProduct(product) {
-    newTotalSum += parseInt(product.price)
-    localStorage.setItem('mySum', newTotalSum)
-    renderCart()
-}
-
 function renderCart() {
-    totalSumContainer.innerHTML = renderSum(newTotalSum)
+    totalSumContainer.innerHTML = renderSum(user.getCartSum())
 }
 
 function renderSum(price) {
@@ -37,16 +31,17 @@ function renderSum(price) {
     return message
 }
 
+
 function modalRender(product) {
     let modal = document.querySelector("#firstmodalCenter")
     let modalPrice = modal.querySelector(".modal-price")
     let modalTitle = modal.querySelector(".modal-title")
-    let modalWeight = document.querySelectorAll(".modal-weight")[0]
+    let modalWeight = modal.querySelector(".modal-weight")
     let modalButton = modal.querySelector(".modal-button")
     let newModalButton = modalButton.cloneNode(true);
     modalButton.parentNode.replaceChild(newModalButton, modalButton);
     newModalButton.addEventListener('click', function () {
-        addProduct(product)
+        user.addOrder(product)
 
     })
     modalTitle.innerHTML = product.title
@@ -55,18 +50,71 @@ function modalRender(product) {
 
 }
 
+function User() {
+    this.email = "ddasdasd@.com"
+    this.orders = []
+    this.asObj = function () {
+        return {
+            orders: this.orders.map(function (product) {
+                return product.asObj()
+            }) // return the list
+        }
+    }
+    this.save = function () {
+        localStorage.setItem("user", JSON.stringify(this.asObj()))
+    }
+    this.load = function () {
+        let saveData = localStorage.getItem("user")
+        if (!saveData) return
+        let savedUser = JSON.parse(saveData)
+        this.orders = savedUser.orders.map(function (product) {
+            return new Product(product)
+        })
+
+    }
+    this.getCartSum = function () {
+        let result = 0
+        this.orders.forEach(function (product) {
+            result += product.price * product.quantity
+        })
+        return result
+    }
+    this.addOrder = function (product) {
+        this.orders.push(product)
+        this.save()
+        renderCart()
+        let myToast = Toastify({
+            text: "Added " + product.title + " in your cart!",
+            duration: 3000
+        })
+        myToast.showToast()
+    }
+    this.delOrder = function (product) {
+    }
+}
+
 
 function Product(item) {
+    this.quantity = 1
     this.id = item.id
     this.title = item.title
     this.price = item.price
     this.card = undefined
     this.weight = item.weight
+    this.asObj = function () {
+        return {
+            quantity: this.quantity,
+            id: this.id,
+            title: this.title,
+            price: this.price,
+            weight: this.weight,
+        }
+    }
     this.registerEvents = function () {
         let product = this
         let addButton = this.card.querySelector(".add-to-cart-trigger")
         addButton.addEventListener('click', function () {
-            addProduct(product)
+            user.addOrder(product)
         })
         let cardTitle = this.card.querySelector(".card-title")
         cardTitle.addEventListener('click', function () {
@@ -101,7 +149,7 @@ function Product(item) {
         this.card = clnInvCard
     }
 }
-API = { //This is our future servere
+API = { //This is our future server
     getProducts: function () { //This is his method
         return [
             { id: 0, title: "BABKIN STUL", price: 10000, weight: "120g" },
@@ -109,7 +157,9 @@ API = { //This is our future servere
             { id: 2, title: "CHERKASH INTELLIGENTA", price: 30000, weight: "5 pieces" },
             { id: 3, title: "TVOROZNIY KAL", price: 15000, weight: "100g" },
             { id: 4, title: "ANALNYA ZHIZHA", price: 20000, weight: "500ml" },
-            { id: 5, title: "LICHINKA TVOEY MAMASHI", price: 50000, weight: "80kg" },
+            { id: 5, title: "LICHINKA TVOEY MAMASHI", price: 50000, weight: "82kg" },
         ]
     }
 }
+
+
