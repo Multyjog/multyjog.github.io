@@ -1,22 +1,6 @@
-let totalSumContainer
 let user = new User()
-user.load()
-
-document.addEventListener('DOMContentLoaded', function () {
-    totalSumContainer = document.getElementById("total");
-    renderCart()
-    let products = API.getProducts().map( // for each element of massive complete the function and return a new massive 
-        function (item) {
-            return new Product(item)
-        }
-    )
-    products.forEach(function (item) {
-        item.render()
-        item.registerEvents()
-    })
-})
-
 function renderCart() {
+    let totalSumContainer = document.getElementById("total");
     totalSumContainer.innerHTML = renderSum(user.getCartSum())
 }
 
@@ -30,7 +14,6 @@ function renderSum(price) {
     let message = "$" + dollar + "." + centsZero + cents
     return message
 }
-
 
 function modalRender(product) {
     let modal = document.querySelector("#firstmodalCenter")
@@ -80,22 +63,50 @@ function User() {
         return result
     }
     this.addOrder = function (product) {
+        if (this.hasProductInCart(product)) {
+            Toastify({
+                text: product.title + " already in your cart!",
+                duration: 3000,
+                close: true,
+            }).showToast()
+            return
+        }
         this.orders.push(product)
         this.save()
         renderCart()
         let myToast = Toastify({
             text: "Added " + product.title + " in your cart!",
-            duration: 3000
+            duration: 3000,
+            close: true,
         })
         myToast.showToast()
     }
     this.delOrder = function (product) {
+        let newOrders = this.orders.filter(function (order) {
+            return order.id !== product.id
+        })
+        this.orders = newOrders
+
+        if (this.isCartEmpty()) {
+            let banner = document.querySelector(".cart-banner")
+            banner.classList.remove("hidden");
+        }
+        renderCart()
+        this.save()
+    }
+    this.hasProductInCart = function (product) {
+        let existingIds = this.orders.map(function (order) {
+            return order.id
+        })
+        return existingIds.includes(product.id)
+    }
+    this.isCartEmpty = function () {
+        return this.orders.length == 0
     }
 }
 
-
 function Product(item) {
-    this.quantity = 1
+    this.quantity = item.quantity || 1
     this.id = item.id
     this.title = item.title
     this.price = item.price
@@ -147,6 +158,40 @@ function Product(item) {
 
         invCardParent.appendChild(clnInvCard)
         this.card = clnInvCard
+    }
+    this.renderCartItem = function () {
+        let invCartCard = document.getElementById("hidden-cart-card")
+        let invCartCardParent = invCartCard.parentNode
+        let clnInvCC = invCartCard.cloneNode(true)
+        clnInvCC.id = "product_" + this.id
+        let cCardTitle = clnInvCC.getElementsByClassName("ccard-title")[0]
+        cCardTitle.innerHTML = this.title
+        let cCardCost = clnInvCC.getElementsByClassName("ccard-cost")[0]
+        cCardCost.innerHTML = renderSum(this.price)
+        let cCardWeight = clnInvCC.getElementsByClassName("ccard-weight")[0]
+        cCardWeight.innerHTML = this.weight
+        let inputQuantity = clnInvCC.getElementsByClassName("quantity-input")[0]
+        inputQuantity.value = this.quantity
+
+        invCartCardParent.appendChild(clnInvCC)
+        this.cartCard = clnInvCC
+
+    }
+    this.registerCartEvents = function () {
+        let product = this
+        let quantityInput = this.cartCard.querySelector(".quantity-input")
+        quantityInput.addEventListener('change', function () {
+            product.quantity = parseInt(quantityInput.value)
+            renderCart()
+            user.save()
+        })
+        let closeButton = this.cartCard.querySelector(".close-button")
+        closeButton.addEventListener('click', function () {
+            user.delOrder(product)
+            product.cartCard.remove()
+
+        })
+
     }
 }
 API = { //This is our future server

@@ -204,7 +204,7 @@ hr {
     margin: 0 3rem 2rem;
 }
 
-#hiddenCard {
+#hiddenCard, #hidden-cart-card, .hidden {
     display: none;
 }
 .sticky {
@@ -220,8 +220,19 @@ hr {
     font-size: x-large;
     font-weight: bolder;
 }
-.close-button {
-    background-color: black;
+.cart-banner {
+    font-size: 350%;
+    text-shadow: 2px 2px black;
     color: white;
-    padding: 5px;
+}
+.brown {font-size: 100%;
+    text-shadow: 2px 2px black;
+    color: rgb(131, 72, 24);
+    text-decoration: none;
+    pointer-events: none;
+}
+.catalog-banner {
+    font-size: 350%;
+    text-shadow: 5px 2px black;
+    color: white;
 }
