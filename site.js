@@ -3,7 +3,6 @@ function renderCart() {
     let totalSumContainer = document.getElementById("total");
     totalSumContainer.innerHTML = renderSum(user.getCartSum())
 }
-
 function renderSum(price) {
     let dollar = parseInt(price / 100)
     let cents = price - (dollar * 100)
@@ -64,22 +63,25 @@ function User() {
     }
     this.addOrder = function (product) {
         if (this.hasProductInCart(product)) {
-            Toastify({
-                text: product.title + " already in your cart!",
-                duration: 3000,
-                close: true,
-            }).showToast()
+            bootoast.toast({
+                message: 'You already have ' + product.title + ' in your cart',
+                type: 'danger',
+                position: 'right-bottom',
+                timeout: 2.5,
+                dismissible: true
+            })
             return
         }
         this.orders.push(product)
         this.save()
         renderCart()
-        let myToast = Toastify({
-            text: "Added " + product.title + " in your cart!",
-            duration: 3000,
-            close: true,
+        bootoast.toast({
+            message: 'We add ' + product.title + ' to your cart',
+            type: 'success',
+            position: 'right-bottom',
+            timeout: 2.5,
+            dismissible: true
         })
-        myToast.showToast()
     }
     this.delOrder = function (product) {
         let newOrders = this.orders.filter(function (order) {
@@ -92,6 +94,13 @@ function User() {
             banner.classList.remove("hidden");
         }
         renderCart()
+        bootoast.toast({
+            message: 'Fully of sadness, we delete this shit from your cart',
+            type: 'info',
+            position: 'right-bottom',
+            timeout: 3,
+            dismissible: true
+        })
         this.save()
     }
     this.hasProductInCart = function (product) {
