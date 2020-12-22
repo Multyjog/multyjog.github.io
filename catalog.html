@@ -13,11 +13,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="site.css">
     <title>Our products</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link href="toast.css" rel="stylesheet" type="text/css">
     <script src="site.js"></script>
+    <script src="catalog.js"></script>
+    <link href="bootoast.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light mt-4">
+    <nav class="navbar navbar-expand-lg navbar-light sticky">
         <a class="navbar-brand d-flex align-items-center" href="home.html">
             <h1 class="logo p-3">SK</h1>
             <h2 class="ml-3">SuperKal</h2>
@@ -36,13 +40,18 @@
             </div>
         </div>
         <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
-            <a class="nav-link" href="cart.html"><i class="nav-link fas fa-shopping-cart"></i><span id="total">$0.00</span></a>
+            <a class="nav-link" href="cart.html"><i class="nav-link fas fa-shopping-cart"></i><span
+                    id="total">$0.00</span></a>
         </div>
     </nav>
     <div id="content" class="container-fluid">
         <div class="mr-t5 mb-5">
             <h3>BEST PRODUCTS</h3>
             <div class="clear"></div>
+        </div>
+        <div>
+            <h2 class="text-center pt-5 flex-fill catalog-banner hidden mr-t5">SORRY, WE GOT A SHITTY CODER! ALREADY
+                HIRING THE NEW ONE! PLEASE, COMEBACK LATER.</h2>
         </div>
         <div class="d-flex fl">
             <div id="hiddenCard" class="cards mb-4 shade">
@@ -58,14 +67,12 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100" src="img/catalog_img.jpg" data-toggle="modal" data-target="#firstmodalCenter">
+                                <img class="d-block w-100" src="img/catalog_img.jpg" data-toggle="modal"
+                                    data-target="#firstmodalCenter">
                             </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="img/catalog_img2.jpg" data-toggle="modal" data-target="#firstmodalCenter">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="img/catalog_img3.jpg" data-toggle="modal" data-target="#firstmodalCenter">
-                            </div>
+                            <!-- Склонировать элемент с 1 ячейкой карусели 
+                            для первой картинки. просто заменяем  IMG SRC.
+                            для последующих клонируем, удаляем класс АКТИВ, заменяем IMG SRC и присоединяем его в конец родительского элемента (карусель иннер)-->
                         </div>
                         <a class="carousel-control-prev" href="#firstcarouselindicators" role="button"
                             data-slide="prev">
@@ -88,10 +95,12 @@
                     Excepteur sint occaecat cupidatat non proident, sunt in
                     culpa qui officia deserunt mollit anim id est laborum.</p>
                 <div class="d-flex justify-content-between card-body">
-                    <h4>100g</h4>
+                    <h4 class="card-weight">100g</h4>
                     <h4 class="card-cost">220$</h4>
                 </div>
-                <button type="button" class="btn btn-warning btn-sm card-body m-5 add-to-cart-trigger">ADD TO CART</button>
+                <button type="button" class="demo btn btn-warning btn-sm card-body marg add-to-cart-trigger">ADD TO
+                    CART</button>
+                <!-- <button type="button" class="btn btn-secondary card-body marg">ADDED</button> -->
             </div>
 
             <!-- Modal -->
@@ -103,7 +112,7 @@
                             <h5 class="modal-title" id="firstmodalLongTitle">GOVNO S TVOROGOM</h5>
                             <button type="button" class="close closemark" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
-                              </button>
+                            </button>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -119,17 +128,21 @@
                                         in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                                         Excepteur sint occaecat cupidatat non proident, sunt in
                                         culpa qui officia deserunt mollit anim id est laborum.</p>
-                                    <h4>Weight: 100g</h4>
+                                    <h4 class="modal-weight">Weight: 100g</h4>
                                     <h4>PRICE: <span class="modal-price">220$</h4>
                                 </div>
                             </div>
                         </div>
                         <div class="popupfooter">
-                            <button type="button" class="modal-button btn btn-warning btn-sm card-body m-5">ADD TO CART</button>
+                            <button type="button" class="modal-button btn btn-warning btn-sm card-body m-5">ADD TO
+                                CART</button>
                         </div>
                     </div>
                 </div>
             </div>
+            <script src="//code.jquery.com/jquery.min.js"></script>
+            <script src="bootoast.js"></script>
+
 </body>
 
 </html>

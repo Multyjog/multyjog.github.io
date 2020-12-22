@@ -12,10 +12,12 @@
     <script src="https://kit.fontawesome.com/1f01a88778.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="site.css">
     <script src="site.js"></script>
+    <script src="cart.js"></script>
+    <link href="bootoast.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light mt-4">
+    <nav class="navbar navbar-expand-lg navbar-light sticky">
         <a class="navbar-brand d-flex align-items-center" href="home.html">
             <h1 class="logo p-3">SK</h1>
             <h2 class="ml-3">SuperKal</h2>
@@ -34,7 +36,7 @@
             </div>
         </div>
         <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
-            <a class="nav-link" href="cart.html"><i class="nav-link fas fa-shopping-cart"></i><span id="total">$0.00</span></a>
+            <a class="nav-link active" href="cart.html"><i class="nav-link fas fa-shopping-cart"></i><span id="total">$0.00</span></a>
         </div>
     </nav>
     <div id="content" class="container-fluid">
@@ -42,12 +44,13 @@
             <h3>CART</h3>
             <div class="clear"></div>
         </div>
-        <div class="content mt-5">
-            <div class="row">
-                <div class="col-sm-4 justify-content-center">
-                    <img src="img/cart_img.png" class="rounded-circle w-50 h-100 mx-auto d-block">
+        <div id="hidden-cart-card" class="content mt-5">
+            <div class="row mb-5">
+                <div class="col-sm-3 justify-content-center">
+                    <img src="img/cart_img.png" class="h-100 mx-auto d-block">
                 </div>
                 <div class="col-sm-6">
+                    <h6 class="ccard-title d-flex justify-content-center product-title">VIPoop</h6>
                     <p class="orderinfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -55,46 +58,25 @@
                         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
-                <div class="col-sm-2 d-flex justify-content-between align-items-center">
-                    <h4 class="price">100g</h4>
-                    <h4 class="price">220$</h4>
+                <div class="col-sm-2 d-flex justify-content-around flex-column align-items-center flex-wrap">
+                    <h4 class="price ccard-weight">100g</h4>
+                    <h4 class="price ccard-cost">220$</h4> 
+                    <input class="quantity-input" type="number" name="quantity" min="1" max="13">
+                </div>
+                <div class="col-sm-1 d-flex justify-content-around align-self-center">
+                    <a href="#"><i class="close-button nav-link fas fa-times-circle"></i></a>
                 </div>
             </div>
             <hr class="ml-5 mr-5">
         </div>
-        <div class="content mt-5">
-            <div class="row">
-                <div class="col-sm-4 justify-content-center">
-                    <img src="img/cart_img.png" class="rounded-circle w-50 h-100 mx-auto d-block">
-                </div>
-                <div class="col-sm-8">
-                    <p class="orderinfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
-            <hr class="ml-5 mr-5">
-        </div>
-        <div class="content mt-5">
-            <div class="row">
-                <div class="col-sm-4 justify-content-center">
-                    <img src="img/cart_img.png" class="rounded-circle w-50 h-100 mx-auto d-block">
-                </div>
-                <div class="col-sm-8">
-                    <p class="orderinfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
-            <hr class="ml-5 mr-5">
+        <div>
+            <h2 class="text-center pt-5 flex-fill cart-banner hidden mr-t5">HERE IS NO PRODUCTS YET. VISIT THE CATALOG PAGE, TO ADD SOME 
+                <a class="brown">SHIT</a> IN YOUR CART</h2>
         </div>
     </div>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="bootoast.js"></script>
+
 
 </body>
 
