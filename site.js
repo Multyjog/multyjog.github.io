@@ -142,6 +142,7 @@ function Product(item) {
         })
 
     }
+    this.renderCarousel = 
     this.render = function () {
         let invCard = document.getElementById("hiddenCard")
         let invCardParent = invCard.parentNode
@@ -154,9 +155,15 @@ function Product(item) {
         let cardWeight = clnInvCard.getElementsByClassName("card-weight")[0]
         cardWeight.innerHTML = this.weight
 
+
         let carousel = clnInvCard.querySelector(".carousel")
         let carouselId = "carousel_" + this.id
         carousel.id = carouselId
+
+        let carouselItem = carousel.querySelector(".carousel-item")
+        carouselImg = carouselItem.querySelector("img")
+        carouselItem.setAttribute("src", "img/catalog_img6.jpg")
+
 
         let carouselImgs = Array.from(clnInvCard.querySelectorAll("li"))
         carouselImgs.forEach(function (carouselImg) {
@@ -206,12 +213,12 @@ function Product(item) {
 API = { //This is our future server
     getProducts: function () { //This is his method
         return [
-            { id: 0, title: "BABKIN STUL", price: 10000, weight: "120g" },
-            { id: 1, title: "VIPooP", price: 60000, weight: "70g" },
-            { id: 2, title: "CHERKASH INTELLIGENTA", price: 30000, weight: "5 pieces" },
-            { id: 3, title: "TVOROZNIY KAL", price: 15000, weight: "100g" },
-            { id: 4, title: "ANALNYA ZHIZHA", price: 20000, weight: "500ml" },
-            { id: 5, title: "LICHINKA TVOEY MAMASHI", price: 50000, weight: "82kg" },
+            { id: 0, title: "BABKIN STUL", price: 10000, weight: "120g", images:["img/catalog_img", "img/catalog_img2"] },
+            { id: 1, title: "VIPooP", price: 60000, weight: "70g", images:["img/catalog_img3", "img/catalog_img4"] },
+            { id: 2, title: "CHERKASH INTELLIGENTA", price: 30000, weight: "5 pieces", images:["img/catalog_img2", "img/catalog_img5"] },
+            { id: 3, title: "TVOROZNIY KAL", price: 15000, weight: "100g", images:["img/catalog_img4", "img/catalog_img6"] },
+            { id: 4, title: "ANALNYA ZHIZHA", price: 20000, weight: "500ml", images:["img/catalog_img3", "img/catalog_img7"]},
+            { id: 5, title: "LICHINKA TVOEY MAMASHI", price: 50000, weight: "82kg", images:["img/catalog_img5", "img/catalog_img"] },
         ]
     }
 }
