@@ -142,39 +142,39 @@ function Product(item) {
         })
 
     }
-    this.renderCarousel = 
-    this.render = function () {
-        let invCard = document.getElementById("hiddenCard")
-        let invCardParent = invCard.parentNode
-        let clnInvCard = invCard.cloneNode(true)
-        clnInvCard.id = "product_" + this.id
-        let cardTitle = clnInvCard.getElementsByClassName("card-title")[0]
-        cardTitle.innerHTML = this.title
-        let cardCosts = clnInvCard.getElementsByClassName("card-cost")[0]
-        cardCosts.innerHTML = renderSum(this.price)
-        let cardWeight = clnInvCard.getElementsByClassName("card-weight")[0]
-        cardWeight.innerHTML = this.weight
+    this.renderCarousel =
+        this.render = function () {
+            let invCard = document.getElementById("hiddenCard")
+            let invCardParent = invCard.parentNode
+            let clnInvCard = invCard.cloneNode(true)
+            clnInvCard.id = "product_" + this.id
+            let cardTitle = clnInvCard.getElementsByClassName("card-title")[0]
+            cardTitle.innerHTML = this.title
+            let cardCosts = clnInvCard.getElementsByClassName("card-cost")[0]
+            cardCosts.innerHTML = renderSum(this.price)
+            let cardWeight = clnInvCard.getElementsByClassName("card-weight")[0]
+            cardWeight.innerHTML = this.weight
 
 
-        let carousel = clnInvCard.querySelector(".carousel")
-        let carouselId = "carousel_" + this.id
-        carousel.id = carouselId
+            let carousel = clnInvCard.querySelector(".carousel")
+            let carouselId = "carousel_" + this.id
+            carousel.id = carouselId
 
-        let carouselItem = carousel.querySelector(".carousel-item")
-        carouselImg = carouselItem.querySelector("img")
-        carouselItem.setAttribute("src", "img/catalog_img6.jpg")
+            let carouselItem = carousel.querySelector(".carousel-item")
+            carouselImg = carouselItem.querySelector("img")
+            carouselItem.setAttribute("src", "img/catalog_img6.jpg")
 
 
-        let carouselImgs = Array.from(clnInvCard.querySelectorAll("li"))
-        carouselImgs.forEach(function (carouselImg) {
-            carouselImg.dataset.target = "#" + carouselId
-        })
-        clnInvCard.querySelector(".carousel-control-prev").setAttribute("href", "#" + carouselId)
-        clnInvCard.querySelector(".carousel-control-next").setAttribute("href", "#" + carouselId)
+            let carouselImgs = Array.from(clnInvCard.querySelectorAll("li"))
+            carouselImgs.forEach(function (carouselImg) {
+                carouselImg.dataset.target = "#" + carouselId
+            })
+            clnInvCard.querySelector(".carousel-control-prev").setAttribute("href", "#" + carouselId)
+            clnInvCard.querySelector(".carousel-control-next").setAttribute("href", "#" + carouselId)
 
-        invCardParent.appendChild(clnInvCard)
-        this.card = clnInvCard
-    }
+            invCardParent.appendChild(clnInvCard)
+            this.card = clnInvCard
+        }
     this.renderCartItem = function () {
         let invCartCard = document.getElementById("hidden-cart-card")
         let invCartCardParent = invCartCard.parentNode
@@ -210,17 +210,41 @@ function Product(item) {
 
     }
 }
-API = { //This is our future server
-    getProducts: function () { //This is his method
-        return [
-            { id: 0, title: "BABKIN STUL", price: 10000, weight: "120g", images:["img/catalog_img", "img/catalog_img2"] },
-            { id: 1, title: "VIPooP", price: 60000, weight: "70g", images:["img/catalog_img3", "img/catalog_img4"] },
-            { id: 2, title: "CHERKASH INTELLIGENTA", price: 30000, weight: "5 pieces", images:["img/catalog_img2", "img/catalog_img5"] },
-            { id: 3, title: "TVOROZNIY KAL", price: 15000, weight: "100g", images:["img/catalog_img4", "img/catalog_img6"] },
-            { id: 4, title: "ANALNYA ZHIZHA", price: 20000, weight: "500ml", images:["img/catalog_img3", "img/catalog_img7"]},
-            { id: 5, title: "LICHINKA TVOEY MAMASHI", price: 50000, weight: "82kg", images:["img/catalog_img5", "img/catalog_img"] },
-        ]
+function getProducts(quantity, price) {
+    let host = 'https://fakerapi.it/'
+    let endPoint = 'api/v1/products'
+    let parameters = {
+        _seed: 7,
+        _quantity: 6,
+        _price_max: 700
     }
+    let searchParams = new URLSearchParams(parameters)
+    fetch(host+endPoint+"?"+searchParams)
+        .then(response => response.json())
+        .then(data => {
+            let products = data.data.map(item => {
+                return new Product({
+                    id: item.ean,
+                    title: item.name,
+                    price: parseInt(item.price),
+                    weight: item.taxes,
+                    quantity: 1,
+                })
+            })
+            renderProducts(products)
+        });
 }
+// API = { //This is our future server
+//     getProducts: function () { //This is his method
+//         return [
+//             { id: 0, title: "BABKIN STUL", price: 10000, weight: "120g", images:["img/catalog_img", "img/catalog_img2"] },
+//             { id: 1, title: "VIPooP", price: 60000, weight: "70g", images:["img/catalog_img3", "img/catalog_img4"] },
+//             { id: 2, title: "CHERKASH INTELLIGENTA", price: 30000, weight: "5 pieces", images:["img/catalog_img2", "img/catalog_img5"] },
+//             { id: 3, title: "TVOROZNIY KAL", price: 15000, weight: "100g", images:["img/catalog_img4", "img/catalog_img6"] },
+//             { id: 4, title: "ANALNYA ZHIZHA", price: 20000, weight: "500ml", images:["img/catalog_img3", "img/catalog_img7"]},
+//             { id: 5, title: "LICHINKA TVOEY MAMASHI", price: 50000, weight: "82kg", images:["img/catalog_img5", "img/catalog_img"] },
+//         ]
+//     }
+// }
 
 
